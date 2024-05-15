@@ -1,11 +1,20 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthenticatedTokenController;
 use App\Http\Controllers\NewsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
-    return $request->user();
+Route::fallback(function () {
+    abort(404, 'Not Found');
 });
 
-Route::apiResource('noticias', NewsController::class)->names('news')->only('index', 'show');
+Route::prefix('v1')->group(function () {
+
+    Route::middleware('auth:sanctum')->name('news.')->prefix('noticias')->group(function () {
+        Route::get('', [NewsController::class, 'index'])->name('index');
+        Route::get('{news}', [NewsController::class, 'show'])->name('show');
+    });
+
+    require __DIR__ . '/api_auth.php';
+});
