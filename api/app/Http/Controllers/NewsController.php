@@ -2,33 +2,32 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\NewsCollection;
 use App\Http\Resources\NewsResource;
 use App\Models\News;
 use App\Traits\Stringable;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class NewsController extends Controller
 {
     use Stringable;
 
-    public function index(Request $request): AnonymousResourceCollection
+    public function index(Request $request)
     {
-        $builder = News::query()->with('category');
+        $query = News::query();
 
         foreach ($request->all() as $key => $value) {
             $term = $this->sanitize($value);
 
             if (Schema::hasColumn('news', $key)) {
-                $builder->when(
+                $query->when(
                     $value,
                     fn ($query) => $query->whereRaw("unaccent(lower($key)) ILIKE ?", ["%$term%"])
                 );
             }
 
-            $builder->when(
+            $query->when(
                 $key === 'category' && $value,
                 fn ($query) => $query->whereHas('category', function ($query) use ($term) {
                     $query->whereRaw("unaccent(lower(name)) ILIKE ?", ["%$term%"]);
@@ -36,11 +35,13 @@ class NewsController extends Controller
             );
         }
 
-        return NewsResource::collection($builder->paginate(10));
+        $paginator = $query->with('category')->paginate(1);
+
+        return new NewsCollection($paginator);
     }
 
-    public function show(string|int $id): Response
+    public function show(News $news)
     {
-        return response(new NewsResource(News::find($id)), 200);
+        return new NewsResource($news);
     }
 }
