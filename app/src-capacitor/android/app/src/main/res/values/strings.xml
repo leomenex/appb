@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">App Bv</string>
+    <string name="title_activity_main">App Bv</string>
+    <string name="package_name">gov.br.app_bv.app</string>
+    <string name="custom_url_scheme">gov.br.app_bv.app</string>
+</resources>
