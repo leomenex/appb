@@ -1,0 +1,625 @@
+/* ==========================================================================
+   Normatização CSS
+   ========================================================================== */
+
+   html,
+   button,
+   input,
+   select,
+   textarea {
+       color: #444;
+   }
+
+   body {
+       font-size: 62.5%;
+   }
+
+   img {
+       vertical-align: middle;
+   }
+
+   fieldset {
+       border: 0;
+       margin: 0;
+       padding: 0;
+   }
+
+   textarea {
+       resize: vertical;
+   }
+
+   /* ==========================================================================
+      Estilos Principais
+      ========================================================================== */
+
+   body {
+       font-family: Helvetica, Arial, sans-serif;
+   }
+
+   .wrap{
+       margin: 0 auto;
+       width: 660px;
+       color: #444;
+   }
+
+
+   h1 {
+       font-size: 1.2em;
+       float: left;
+   }
+
+   h2 {
+       font-size: 2.4em;
+       margin-top: 2em;
+   }
+
+   h3 {
+       font-size: 1.8em;
+       margin-top: 2em;
+   }
+
+   h1 a {
+       text-decoration: none;
+       color: #057ac5;
+   }
+
+   p {
+       font-size: 1.6em;
+       line-height: 2.1em;
+   }
+
+   a {
+       color: #057ac5;
+       text-decoration: none;
+   }
+
+   a:hover {
+       text-decoration: underline;
+   }
+
+   figure img {
+       margin-bottom: 2em;
+   }
+   .cabe1{
+       border: 1px solid;
+       float: left;
+       font-size: 1.1em;
+       line-height: 1.2em;
+       min-height: 80px;
+       text-align: center;
+       width: 49%;
+       padding: 10px 0 0;
+   }
+   .cabe2{
+       border: 1px solid;
+       float: left;
+       font-size: 1.1em;
+       line-height: 1.2em;
+       min-height: 80px;
+       text-align: center;
+       width: 50%;
+       padding: 10px 0 0;
+   }
+   .brasao_federal{
+       float: left;
+       margin: 0px 0 0px 23px;
+       height: 61px;
+   }
+   .brasao{
+       height: 60px;
+   }
+   .cabe1 span{
+       font-style: italic;
+       font-weight: bold;
+   }
+   .cabe1 strong{
+       font-weight: bold;
+   }
+   .cabe2 span{
+       font-style: italic;
+       font-weight: bold;
+   }
+   .header {
+       margin: 0 auto;
+       width: 660px;
+       padding-top: 2em;
+       padding-bottom: 2em;
+       position: relative;
+       overflow: hidden;
+   }
+
+   .header h1 {
+       color: #FFF;
+       font-size: 1.6em;
+       width: 240px;
+       float: left;
+       display: block;
+       margin: 0;
+       padding: 0;
+   }
+
+   .menu ul {
+       float: right;
+       width: 420px;
+       margin: 0;
+       padding: 0;
+   }
+
+   .menu li {
+       display: inline-block;
+       margin-right: 2em;
+   }
+
+   .menu a {
+       font-size: 1.4em;
+   }
+
+   .artigo {
+       margin-top: 4em;
+   }
+
+   .footer {
+       background: #000;
+       padding: 1.5em 0 1.5em 0;
+       margin-top: 4em;
+       width: 100%;
+   }
+
+   .footer small {
+       color: #CCC;
+       font-size: 1.2em;
+       line-height: 1.5em;
+       width: 640px;
+       margin: 0 auto;
+       display: block;
+   }
+
+
+   .no-print {
+       display: block;
+   }
+
+   .print {
+       display: none;
+   }
+
+   .texto{
+       float: left;
+       border: 1px solid;
+       width: 95%;
+       margin: 3px 10px;
+       padding: 5px;
+   }
+   .box1{
+       float: left;
+       width: 100%;
+   }
+   .box2{
+       float: left;
+       border: 1px solid;
+       width: 100%;
+       padding: 10px;
+       font-size: 1.4em;
+   }
+   .box3{
+       border: 1px solid;
+       float: left;
+       margin: 5px 0;
+       width: 81%;
+   }
+   .box4{
+       border: 1px solid;
+       float: left;
+       width: 100%;
+   }
+   .box4_1{
+       float: left;
+       padding: 10px;
+       font-size: 1.4em;
+   }
+   .box4_2{
+       border-left: 1px solid;
+       border-right: 1px solid;
+       float: left;
+       padding: 10px;
+       font-size: 1.4em;
+   }
+   .box4_3{
+       float: left;
+       padding: 10px;
+       font-size: 1.4em;
+   }
+   .box4_1 span{
+       float: left;
+       width: 100%;
+       font-size: 0.6em;
+   }
+   .box4_2 span{
+       float: left;
+       width: 100%;
+       font-size: 0.6em;
+   }
+   .box4_3 span{
+       float: left;
+       width: 100%;
+       font-size: 0.6em;
+   }
+   .box5{
+       float: left;
+       margin: 10px 0;
+       width: 100%;
+   }
+   .box3_1{
+       float: left;
+       padding: 10px;
+       width: 50%;
+   }
+   .box3_1 span{}
+   .box3_2{
+       border-left: 1px solid;
+       border-right: 1px solid;
+       float: left;
+       font-weight: bold;
+       padding: 10px;
+   }
+   .box3_3{
+       float: left;
+       padding: 10px;
+   }
+   .box3_4{
+       border-top: 1px solid;
+       float: left;
+       padding: 11px;
+       width: 96%;
+   }
+   .div_font1{
+       border-right: 1px solid;
+       float: left;
+       font-size: 1.1em;
+       padding: 10px;
+   }
+   .div_font2{
+       font-size: 1em;
+       padding: 10px;
+       float: left;
+   }
+
+   .div_font1 span{
+       width: 100%;
+       float: left;
+       font-size: 0.6em;
+       margin-right: 6px;
+   }
+   .div_font2 span{
+       width: 100%;
+       float: left;
+       font-size: 0.6em;
+       margin-right: 6px;
+   }
+   .div_font3{
+       border-top: 1px solid;
+       float: left;
+       font-size: 1.1em;
+       padding: 10px;
+       width: 97%;
+   }
+
+   .div_font3 span{
+       width: 100%;
+       float: left;
+       font-size: 0.6em;
+       margin-right: 6px;
+   }
+   .direita{
+       float: right;
+   }
+   .div_rend1{
+       border-right: 1px solid;
+       float: left;
+       padding: 10px;
+       text-align: left;
+       width: 75%;
+   }
+   .div_rend2{
+       float: right;
+       padding: 10px;
+       text-align: right;
+       width: 100px;
+   }
+   .div_rend1 span{}
+   .div_rend2 span{}
+   /* ==========================================================================
+      Estilos para impressão
+      ========================================================================== */
+
+   @media print {
+
+       * {
+           background: transparent !important;
+           color: #000 !important;
+           text-shadow: none !important;
+           filter:none !important;
+           -ms-filter: none !important;
+       }
+
+       body {
+           margin:0;
+           padding:0;
+           line-height: 1.4em;
+           font: 5pt Helvetica, Arial, sans-serif;
+           color: #000;
+       }
+
+       @page {
+           margin: 0.5cm;
+           margin-top: 0.1cm;
+       }
+       .box1{
+           float: left;
+           width: 100%;
+       }
+       .box2{
+           float: left;
+           border: 1px solid;
+           width: 100%;
+           padding: 3px;
+       }
+       .box3{
+           border: 1px solid;
+           float: left;
+           margin: 5px 0;
+           width: 81%;
+       }
+       .box4{
+           border: 1px solid;
+           float: left;
+           width: 98%;
+       }
+       .box4_1{
+           float: left;
+           padding: 3px;
+           font-size: 6pt;
+       }
+       .box4_2{
+           border-left: 1px solid;
+           border-right: 1px solid;
+           float: left;
+           padding: 3px;
+           font-size: 6pt;
+       }
+       .box4_3{
+           float: left;
+           padding: 3px;
+           font-size: 6pt;
+       }
+       .box4_1 span{
+           float: left;
+           width: 100%;
+           font-size: 6pt;
+       }
+       .box4_2 span{
+           float: left;
+           width: 100%;
+           font-size: 6pt;
+       }
+       .box4_3 span{
+           float: left;
+           width: 100%;
+           font-size: 6pt;
+       }
+       .box5{
+           float: left;
+           margin: 3px 0;
+           width: 100%;
+       }
+       .box3_1{
+           float: left;
+           padding: 3px;
+           width: 50%;
+       }
+       .box3_1 span{}
+       .box3_2{
+           border-left: 1px solid;
+           border-right: 1px solid;
+           float: left;
+           font-weight: bold;
+           padding: 3px;
+       }
+       .box3_3{
+           float: left;
+           padding: 3px;
+       }
+       .box3_4{
+           border-top: 1px solid;
+           float: left;
+           padding: 3px;
+           width: 96%;
+       }
+       .div_font1{
+           border-right: 1px solid;
+           float: left;
+           font-size: 6pt;
+           padding: 3px;
+       }
+       .div_font2{
+           font-size: 6pt;
+           padding: 3px;
+           float: left;
+       }
+
+       .div_font1 span{
+           width: 100%;
+           float: left;
+           font-size: 6pt;
+           margin-right: 6px;
+       }
+       .div_font2 span{
+           width: 100%;
+           float: left;
+           font-size: 6pt;
+           margin-right: 6px;
+       }
+       .div_font3{
+           border-top: 1px solid;
+           float: left;
+           font-size: 6pt;
+           padding: 3px;
+           width: 97%;
+       }
+
+       .div_font3 span{
+           width: 100%;
+           float: left;
+           font-size: 6pt;
+           margin-right: 6px;
+       }
+       .direita{
+           float: right;
+       }
+       .div_rend1{
+           border-right: 1px solid;
+           float: left;
+           padding: 3px;
+           text-align: left;
+           width: 75%;
+           font-size: 6pt;
+       }
+       .div_rend2{
+           float: right;
+           padding: 3px;
+           text-align: right;
+           width: 100px;
+           font-size: 6pt;
+       }
+       .div_rend1 span{}
+       .div_rend2 span{}
+       .cabe1{
+           border: 1px solid;
+           float: left;
+           font-size: 6pt;
+           line-height: 1.2em;
+           min-height: 40px;
+           text-align: center;
+           width: 49%;
+           padding: 3px 0 0;
+       }
+       .cabe2{
+           border: 1px solid;
+           float: left;
+           font-size: 6pt;
+           line-height: 1.2em;
+           min-height: 40px;
+           text-align: center;
+           width: 50%;
+           padding: 3px 0 0;
+       }
+       .brasao_federal{
+           float: left;
+           margin: 0px 0 0px 23px;
+           height: 20px;
+       }
+       .brasao{
+           height: 30px;
+       }
+       .cabe1 span{
+           font-style: italic;
+           font-weight: bold;
+       }
+       .cabe1 strong{
+           font-weight: bold;
+       }
+       .cabe2 span{
+           font-style: italic;
+           font-weight: bold;
+       }
+       .wrap {
+           width: 98%;
+           margin: 0;
+           float: none !important;
+       }
+
+       .no-print, nav, footer, video, audio, object, embed {
+           display:none;
+       }
+
+       .print {
+           display: block;
+       }
+       .texto{
+           float: left;
+           border: 1px solid;
+           width: 95%;
+           margin: 3px 10px;
+           padding: 3px;
+           font-size: 6pt;
+       }
+
+       img {
+           max-width: 100%;
+       }
+
+       aside {
+           display:block;
+           page-break-before: always;
+       }
+
+       h1 {
+           font-size: 6pt;
+           float: left;
+       }
+
+       h2 {
+           font-size: 18pt;
+       }
+
+       h3 {
+           font-size: 14pt;
+       }
+
+       p {
+           font-size: 12pt;
+           widows: 3;
+           orphans: 3;
+       }
+
+       a, a:visited {
+           text-decoration: underline;
+       }
+
+       a:link:after, a:visited:after {
+           content: " (" attr(href) ") ";
+       }
+
+       p a {
+           word-wrap: break-word;
+       }
+
+       q:after {
+           content: " (" attr(cite) ")"
+       }
+
+       a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+           content: "";
+       }
+
+       .page-break {
+           page-break-before: always;
+       }
+
+       /*Estilos da Demo*/
+       .header.print h1{
+           width: 100%;
+           margin-bottom: 0.5cm;
+           font-size: 18pt;
+       }
+
+
+       .artigo {
+           margin-top: 0;
+           padding-top: 1cm;
+       }
+
+       h1 a:link:after, h1 a:visited:after {
+           content: "";
+       }
+   }
