@@ -11,18 +11,18 @@ Route::fallback(function () {
 
 Route::prefix('v1')->group(function () {
 
-    // Route::middleware('auth:sanctum')->group(function () {
+    Route::middleware('auth:sanctum')->group(function () {
 
         Route::name('news.')->prefix('noticias')->group(function () {
             Route::get('', [NewsController::class, 'index'])->name('index');
             Route::get('{news}', [NewsController::class, 'show'])->name('show');
         });
 
-        Route::name('ballotc.')->prefix('cedulac')->group(function () {
-            Route::post('import', [BallotCController::class, 'import'])->name('import');
-            Route::get('{cpf}/pdf', [BallotCController::class, 'pdf'])->name('pdf');
-        });
-    // });
+        // Route::name('ballotc.')->prefix('cedulac')->group(function () {
+        //     Route::post('import', [BallotCController::class, 'import'])->name('import');
+        //     Route::get('{cpf}/pdf', [BallotCController::class, 'pdf'])->name('pdf');
+        // });
+    });
 
     require __DIR__ . '/api_auth.php';
 });
