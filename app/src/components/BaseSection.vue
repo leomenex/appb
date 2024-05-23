@@ -1,17 +1,19 @@
 <template>
-  <div class="row justify-between">
-    <div>
-      <h5 class="text-weight-bold q-ma-none">{{ title }}</h5>
-      <div class="circle-full"></div>
+  <div class="q-my-md">
+    <div class="row justify-between q-my-md">
+      <div>
+        <h5 class="text-weight-bold q-ma-none">{{ title }}</h5>
+        <Circle />
+      </div>
+      <q-btn flat color="text-more" label="Ver Todos" />
     </div>
-    <q-btn flat color="text-more" label="Ver Todos" />
-    <!-- <div class="text-more">
-      Ver Todos
-    </div> -->
+    <slot></slot>
   </div>
 </template>
 
 <script setup>
+import Circle from './BaseCircle.vue'
+
 defineOptions({
   name: 'base-section'
 })
@@ -22,15 +24,8 @@ const props = defineProps({
 </script>
 
 <style>
-.circle-full {
-  height: 15px;
-  width: 15px;
-  border-radius: 10px;
-  background-color: #389ed0;
-}
-
 .text-more {
-  color: #c5cfe0;
+  color: #c5cfe0 !important;
 }
 
 .q-btn__content {
