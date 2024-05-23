@@ -7,8 +7,8 @@
 
 <style scoped>
 .circle-full {
-  height: 15px;
-  width: 15px;
+  height: 10px;
+  width: 10px;
   border-radius: 10px;
   background-color: #389ed0;
 }

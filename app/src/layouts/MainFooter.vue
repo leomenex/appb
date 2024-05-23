@@ -32,10 +32,17 @@ const linksList = [
 </script>
 
 <template>
-  <q-footer bordered class="bg-blue ">
-    <div style="height: 10px;"></div>
+  <q-footer bordered class="footer">
+    <div class="container">
+      <div class="item yellow"></div>
+      <div class="item orange"></div>
+      <div class="item blue"></div>
+      <div class="item blue2"></div>
+      <div class="item green"></div>
+      <div class="item green2"></div>
+    </div>
 
-    <q-tabs v-model="tab" dense style="border-radius: 20px 20px 0 0;" class="bg-white">
+    <q-tabs v-model="tab" dense style="border-radius: 10px 10px 0 0;" class="bg-white">
       <q-tab v-for="(item, index) in linksList" :key="index" :name="item.name" :icon="item.icon" :label="item.label" />
     </q-tabs>
   </q-footer>
@@ -51,7 +58,47 @@ const linksList = [
 }
 
 .q-tab__label {
-  font-size: 15px;
+  font-size: 10px;
   text-transform: capitalize;
+}
+
+.yellow {
+  background-color: #f8d006;
+}
+
+.orange {
+  background-color: #f19021;
+}
+
+.blue {
+  background-color: #04a9e9;
+}
+
+.blue2 {
+  background-color: #0487cc;
+}
+
+.green {
+  background-color: #7fbe42;
+}
+
+.green2 {
+  background-color: #10ae4c;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 8px;
+}
+
+.item {
+  height: 100%;
+  width: 100%;
+}
+
+.footer {
+  border: 0;
+  background-image: linear-gradient(90deg, #f8d006, #10ae4c) !important;
 }
 </style>

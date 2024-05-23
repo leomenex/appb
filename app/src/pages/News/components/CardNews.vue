@@ -19,17 +19,19 @@ function getTitle(text = '') {
 </script>
 
 <template>
-  <q-card class="card-size q-ma-sm">
+  <q-card class="card-size q-ma-sm " flat bordered>
     <q-card-section style="width: 100;">
       <img src="https://cdn.quasar.dev/img/mountains.jpg" style="border-radius: 5px 5px 0 0; width: 100%;">
 
-      <div class="text-weight-bold text-subtitle2">
+      <div class="text-weight-bold text-caption">
         {{ getTitle(news.title) }}
       </div>
 
       <div class="text-body2 row items-center">
         <Circle :class="['q-mr-sm', `bg-${news.category.color}`]" />
-        {{ news.category.name }}
+        <small class="text-secondary">
+          {{ news.category.name }}
+        </small>
       </div>
     </q-card-section>
 

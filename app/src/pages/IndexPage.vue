@@ -1,6 +1,7 @@
 <script setup>
 import BaseSection from 'src/components/BaseSection.vue';
 import CardNews from './News/components/CardNews.vue';
+import Profile from 'src/components/BaseProfile.vue';
 
 defineOptions({
   name: 'IndexPage'
@@ -22,12 +23,12 @@ const news = [
     }
   }
 ]
-
-
 </script>
 
 <template>
   <q-page>
+    <Profile />
+
     <BaseSection title="Acesso Rápido">
       <q-virtual-scroll :items="news" virtual-scroll-horizontal v-slot="{ item, index }" style="height: 230px;"
         class="q-gutter items-center">

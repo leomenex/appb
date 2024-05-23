@@ -2,10 +2,10 @@
   <div class="q-my-md">
     <div class="row justify-between q-my-md">
       <div>
-        <h5 class="text-weight-bold q-ma-none">{{ title }}</h5>
+        <h6 class="text-weight-bold q-ma-none text-subtitle1">{{ title }}</h6>
         <Circle />
       </div>
-      <q-btn flat color="text-more" label="Ver Todos" />
+      <q-btn flat color="text-secondary" label="Ver Todos" />
     </div>
     <slot></slot>
   </div>
@@ -24,10 +24,6 @@ const props = defineProps({
 </script>
 
 <style>
-.text-more {
-  color: #c5cfe0 !important;
-}
-
 .q-btn__content {
   text-transform: capitalize !important;
 }
