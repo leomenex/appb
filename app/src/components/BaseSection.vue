@@ -5,7 +5,7 @@
         <h6 class="text-weight-bold q-ma-none text-subtitle1">{{ title }}</h6>
         <Circle />
       </div>
-      <q-btn flat color="text-secondary" label="Ver Todos" />
+      <q-btn flat color="text-secondary" label="Ver Todos" size="sm" id="btn-more" />
     </div>
     <slot></slot>
   </div>
@@ -26,5 +26,9 @@ const props = defineProps({
 <style>
 .q-btn__content {
   text-transform: capitalize !important;
+}
+
+#btn-more {
+  color: var(--q-secondary);
 }
 </style>
