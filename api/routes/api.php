@@ -14,7 +14,7 @@ Route::prefix('v1')->group(function () {
 
     // Route::middleware('auth:sanctum')->group(function () {
 
-    Route::name('news.')->prefix('noticias')->group(function () {
+    Route::name('news.')->prefix('news')->group(function () {
         Route::get('', [NewsController::class, 'index'])->name('index');
         Route::get('{news}', [NewsController::class, 'show'])->name('show');
     });
