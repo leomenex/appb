@@ -80,11 +80,11 @@ class BallotCController extends Controller
                 if ($item->name == 'RTRT') {
                     $thirteenth['base'] = $formatted;
                 } else {
-                    $thirteenth['discont'] += $formatted;
+                    // $thirteenth['discont'] += $formatted;
                 }
             });
 
-        dd($values, $thirteenth);
+        // dd($values, $thirteenth);
 
         $nature = $server->idrec === '0561'
             ? "Rendimento do trabalhador assalariado"
