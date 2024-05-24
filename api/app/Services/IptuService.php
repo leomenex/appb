@@ -44,11 +44,16 @@ class IptuService
             "login" => env('IPTU_PMBV_LOGIN'),
             "password" => env('IPTU_PMBV_PASSWORD')
         ];
-
-        $response = Http::post("{$this->baseURL}/accessToken", $params);
+        $url = "{$this->baseURL}/accessToken";
+        $response = Http::post($url, $params);
 
         if ($response->failed()) {
-            return '';
+            $response = $this->handleUnauthenticatedError(
+                url: $url,
+                method: 'get',
+                params: [],
+                statusCode: $response->status()
+            );
         }
 
         Cache::put(
@@ -78,7 +83,12 @@ class IptuService
 
         if ($response->failed()) {
 
-            return [];
+            $response = $this->handleUnauthenticatedError(
+                url: $url,
+                method: 'get',
+                params: [],
+                statusCode: $response->status()
+            );
         }
 
         return $response->json()['results'];
@@ -86,11 +96,19 @@ class IptuService
 
     public function getIptus(string $property_id): array
     {
+        $url = "{$this->baseURL}/tributos/v1/imoveis/$property_id/iptus";
+
         $response = Http::withHeader('Authorization', "Bearer {$this->token}")
-            ->get("{$this->baseURL}/tributos/v1/imoveis/$property_id/iptus");
+            ->get($url);
 
         if ($response->failed()) {
-            return [];
+
+            $response = $this->handleUnauthenticatedError(
+                url: $url,
+                method: 'get',
+                params: [],
+                statusCode: $response->status()
+            );
         }
 
         return $response->json();
@@ -101,7 +119,13 @@ class IptuService
         $response = Http::withHeader('Authorization', "Bearer {$this->token}")->get($url);
 
         if ($response->failed()) {
-            return '';
+
+            $response = $this->handleUnauthenticatedError(
+                url: $url,
+                method: 'get',
+                params: [],
+                statusCode: $response->status()
+            );
         }
 
         return $response->json();
@@ -111,7 +135,7 @@ class IptuService
         string $url,
         string $method,
         ?array $params = [],
-        int $statusCode
+        int $statusCode,
     ): HttpResponse|null {
 
         if ($statusCode !== Response::HTTP_UNAUTHORIZED) {
@@ -120,7 +144,12 @@ class IptuService
 
         $this->token = $this->authenticate(refreshToken: true);
 
-        return Http::withHeader('Authorization', "Bearer {$this->token}")
+        $response = Http::withHeader('Authorization', "Bearer {$this->token}")
             ->$method($url, $params);
+
+        if ($response->failed()) {
+        }
+
+        return $response;
     }
 }
