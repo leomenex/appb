@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Enums\AppExternal;
 use Illuminate\Http\Client\Response as HttpResponse;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Cache;
@@ -10,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class IptuService
 {
-    private string $baseURL = 'https://desenv-api.admsistemas.srv.br';
+    private string $baseURL;
     private string $cacheKeyAccessToken = 'iptu_access_token';
     private string $token;
 
@@ -21,8 +22,10 @@ class IptuService
      */
     public function __construct()
     {
+        $this->baseURL = AppExternal::SAATRI->getDevelopBaseURL();
+
         if (in_array(env('APP_ENV'), ['prod', 'production'])) {
-            $this->baseURL = 'https://api.admsistemas.srv.br';
+            $this->baseURL = AppExternal::SAATRI->getBaseURL();
         }
 
         $this->token = $this->authenticate();
