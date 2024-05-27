@@ -16,4 +16,9 @@ class EventHour extends Model
         'vacancy_limit',
         'vacancy_current',
     ];
+
+    protected $dates = [
+        'start',
+        'end',
+    ];
 }
