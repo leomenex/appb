@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\NewsCollection;
 use App\Http\Resources\NewsResource;
 use App\Models\News;
+use App\Services\NewsService;
 use App\Traits\Stringable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Schema;
@@ -14,31 +15,15 @@ class NewsController extends Controller
 {
     use Stringable;
 
+    public function __construct(private NewsService $service)
+    {
+    }
+
     public function index(Request $request)
     {
-        $query = News::query();
+        $content = $this->service->index($request->all());
 
-        foreach ($request->all() as $key => $value) {
-            $term = $this->sanitize($value);
-
-            if (Schema::hasColumn('news', $key)) {
-                $query->when(
-                    $value,
-                    fn ($query) => $query->whereRaw("unaccent(lower($key)) ILIKE ?", ["%$term%"])
-                );
-            }
-
-            $query->when(
-                $key === 'category' && $value,
-                fn ($query) => $query->whereHas('category', function ($query) use ($term) {
-                    $query->whereRaw("unaccent(lower(name)) ILIKE ?", ["%$term%"]);
-                })
-            );
-        }
-
-        $paginator = $query->with('category')->paginate(1);
-
-        return new NewsCollection($paginator);
+        return response($content);
     }
 
     public function show(News $news)
