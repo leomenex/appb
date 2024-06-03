@@ -18,10 +18,17 @@ const news = [
   {
     title: 'COMUNICADO Mirant Edileusa Lós tem novo horário de funcionamento',
     category: {
-      name: 'Turismo',
-      color: '',
+      name: 'Esporte',
+      color: 'purple',
     }
-  }
+  },
+  {
+    title: 'COMUNICADO Mirant Edileusa Lós tem novo horário de funcionamento',
+    category: {
+      name: 'Artes',
+      color: 'green',
+    }
+  },
 ]
 </script>
 
